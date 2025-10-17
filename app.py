@@ -5,7 +5,7 @@ from PIL import Image
 from story_generator import generate_story_with_images, narrate_story
 
 st.set_page_config(page_title="AI Story Generator", layout="centered")
-st.title("📖 AI Story Generator from Images")
+st.title("📖 AI Story Generator")
 st.markdown(">Upload 1–10 images, choose a style, and let AI write and narrate your story.")
 
 with st.sidebar:
