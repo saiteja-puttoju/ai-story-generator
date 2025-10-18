@@ -8,10 +8,11 @@ An interactive web application built with Streamlit that uses Google's Gemini Pr
 
   * **Image-to-Story:** Upload between 1 and 10 images to serve as the creative inspiration for the story.
   * **Genre Selection:** Choose from a variety of story styles, including Comedy, Thriller, Fairy Tale, Sci-Fi, and more, to guide the AI's tone and narrative.
-  * **Dynamic Prompting:** The backend uses an advanced prompting strategy that adapts based on the selected genre, ensuring a unique and fitting story every time.
+  * **Custom Instructions:** An optional text box allows you to add specific instructions (e.g., "Make it funny," "Set the output language") to further personalize the story.
+  * **Dynamic Prompting:** The backend uses an advanced prompting strategy that adapts based on the selected genre and user instructions.
   * **Audio Narration:** Listen to your generated story with an integrated audio player, powered by Google Text-to-Speech (gTTS).
   * **Indian Context:** The AI is instructed to use Indian names, characters, and cultural details, giving the stories a distinct flavor.
-  * **Interactive UI:** A simple and intuitive user interface built with Streamlit allows for easy image uploads and genre selection.
+  * **Interactive UI:** A simple and intuitive user interface built with Streamlit allows for easy image uploads and controls.
 
 -----
 
@@ -87,6 +88,7 @@ Your web browser will automatically open to the application's user interface.
 ## How to Use
 
 1.  **Upload Images:** Use the file uploader in the sidebar to select and upload 1 to 10 images (`.png`, `.jpeg`, `.jpg`).
-2.  **Select a Style:** Choose your desired story genre from the dropdown menu in the sidebar.
-3.  **Generate:** Click the **"Generate the Story"** button.
-4.  **Enjoy:** The application will display the generated story text and provide an audio player to listen to the narration.
+2.  **Select a Style:** Choose your desired story genre from the dropdown menu.
+3.  **Add Instructions (Optional):** Use the text box to add any extra directions for the AI.
+4.  **Generate:** Click the **"Generate Story and Narration"** button.
+5.  **Enjoy:** The application will display the generated story text and provide an audio player to listen to the narration.
