@@ -25,6 +25,12 @@ with st.sidebar:
         ('Comedy', 'Thriller', 'Fairy Tale', 'Sci-FI', 'Mystery', 'Adventure', 'Morale', "Historical Fiction")
     )
 
+    additional_instructions = st.text_area(
+        "Additional Instructions (Optional)",
+        placeholder = "E.g., Make it funny, set output language, keep it short, etc.",
+        help = "This instruction is appended to the generated prompt"
+    )
+
 
 # Preview uploaded images
 if uploaded_files:
@@ -47,7 +53,7 @@ if uploaded_files:
 
 
 # button to generate story
-generate_button = st.button("Generate the Story", type="primary")
+generate_button = st.button("Generate Story and Narration", type="primary")
 
 
 
@@ -62,12 +68,12 @@ if generate_button:
             with st.spinner("Your story is coming to life with words and voice…"):
 
                 # generate story
-                generating_story = generate_story_with_images(pil_images, story_style)
+                generating_story = generate_story_with_images(pil_images, story_style, additional_instructions)
                 if generating_story:
                     st.header(f"Your {story_style} story: ")
                     st.success(generating_story)
                 
-            with st.spinner("We are half way, almost ready ✨"):
+            with st.spinner("We’re halfway there, almost ready ✨"):
 
                 # generte audio
                 generating_audio = narrate_story(generating_story)

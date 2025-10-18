@@ -12,7 +12,7 @@ if not api_key:
 
 client = genai.Client(api_key=api_key)
 
-def create_advanced_prompt(style):
+def create_advanced_prompt(style: str, extra_instructions: str= "") -> str:
 
     # --- Base prompt ---
     base_prompt = f"""
@@ -52,15 +52,26 @@ def create_advanced_prompt(style):
     elif style == "Historical Fiction":
         style_instruction = "\nSpecial Note: After the story, add [HISTORICAL CONTEXT]: a short note about the real historical background that inspired the story."
 
-    return base_prompt + style_instruction
+    prompt = base_prompt + style_instruction
+
+    # --- Append user’s extra text if provided ---
+    extra = extra_instructions.strip()
+    if extra_instructions:
+        prompt += f"""
+        
+        The text below contains user‑specific requirements that must shape the final output. Treat them as authoritative whenever they differ from the general storytelling rules above. Where no conflict exists, combine both the base instructions and these additional directions to create a story that is both structured and personalized.
+        TEXT: {extra}
+        """
+
+    return prompt
 
 
 
-def generate_story_with_images(images, style):
+def generate_story_with_images(images, style, extra_instructions):
 
     response = client.models.generate_content(
         model= "gemini-2.5-flash-lite",
-        contents=[images, create_advanced_prompt(style)],
+        contents=[images, create_advanced_prompt(style, extra_instructions)],
     )
     
     return response.text
