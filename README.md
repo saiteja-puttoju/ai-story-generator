@@ -2,6 +2,8 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ai-story-generator-by-saiteja-puttoju.streamlit.app/)
 [![Read on Hashnode](https://img.shields.io/badge/Hashnode-Read%20Blog%20Post-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://saitejaputtoju.hashnode.dev/ai-story-generator)
+[![Watch Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/YMYFy5cUx6c?si=Og61TbCdNt6BfaxE)
+
 
 An interactive web application built with Streamlit that uses Google's Gemini Pro Vision to generate a unique, short story based on a series of user-uploaded images. The application also provides an audio narration of the generated story.
 
